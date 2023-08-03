@@ -1,0 +1,8 @@
+package basic;
+
+public class P002_TypeCast {
+	public static void main(String[] args) {
+		int i=1;
+		
+	}
+}

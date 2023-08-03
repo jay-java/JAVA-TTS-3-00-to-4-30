@@ -1,0 +1,15 @@
+package basic;
+//streams
+//1.in->user input
+//2.out->print stream
+//3.err->error msg
+public class First {
+	public static void main(String[] args) {
+		System.out.println("hello java");
+		System.out.println("hello java 98765413@#$% again");
+		System.out.println("hello");
+		int i=1;
+		int j = 2;
+		System.out.println(i+j);
+	}
+}

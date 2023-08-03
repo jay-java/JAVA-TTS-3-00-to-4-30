@@ -1,0 +1,9 @@
+package basic;
+
+public class P002_TypeCast {
+	public static void main(String[] args) {
+		int i=1;
+		double d = 3;
+		System.out.println(d);
+	}
+}

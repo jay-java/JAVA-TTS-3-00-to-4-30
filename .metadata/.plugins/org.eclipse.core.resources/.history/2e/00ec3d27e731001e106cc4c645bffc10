@@ -1,0 +1,16 @@
+package basic;
+import java.util.Scanner;
+
+public class P003_ConditionalStatemnts {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter i = ");
+		int i = sc.nextInt();
+		System.out.println("enter j = ");
+		int j = sc.nextInt();
+		//1.simple if
+		if() {
+			
+		}
+	}
+}
