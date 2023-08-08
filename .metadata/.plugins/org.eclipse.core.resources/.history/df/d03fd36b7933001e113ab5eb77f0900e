@@ -1,0 +1,7 @@
+package basic;
+
+public class P007_String {
+	public static void main(String[] args) {
+		char name[]= {'J','A','V','A'};
+	}
+}

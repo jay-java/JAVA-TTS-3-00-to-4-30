@@ -1,0 +1,34 @@
+package basic;
+//Constructor-> is special member function of class 
+//				which has same name as class name
+//			-> called automatically when object is created
+//			-> have no return type
+//			-> 3 types
+//			->1.Default 2.Parameterized 3.Copy(object cloning)
+class Data{
+	int i;
+	String name;
+	Data(){
+		System.out.println("default cons");
+	}
+	Data(int i){
+		System.out.println("default int cons : "+i);
+	}
+	Data(String name){
+		System.out.println("default Stirng cons : "+name);
+	}
+	public void showData() {
+		System.out.println("i = "+i+" name : "+name);
+	}
+}
+public class P008_Constructor {
+	public static void main(String[] args) {
+		Data d = new Data();
+		d.showData();
+		Data d1 = new Data(12);
+		d1.showData();
+		Data d2 = new Data("java");
+		d2.showData();
+		
+	}
+}

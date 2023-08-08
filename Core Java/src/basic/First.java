@@ -11,12 +11,12 @@ public class First {
 		System.out.println("hello java");
 		System.out.println("hello java 98765413@#$% again");
 		System.out.println("hello");
-		Scanner obj = new Scanner(System.in);
-		System.out.println("enter i = ");
-		int i = obj.nextInt();
-		System.out.println("enter j = ");
-		int j = obj.nextInt();
-		double k = (double)i/(double)j;
-		System.out.println(k);
+//		Scanner obj = new Scanner(System.in);
+//		System.out.println("enter i = ");
+//		int i = obj.nextInt();
+//		System.out.println("enter j = ");
+//		int j = obj.nextInt();
+//		double k = (double)i/(double)j;
+//		System.out.println(k);
 	}
 }

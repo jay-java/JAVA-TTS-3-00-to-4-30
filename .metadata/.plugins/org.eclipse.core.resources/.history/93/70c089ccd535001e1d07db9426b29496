@@ -1,0 +1,7 @@
+package basic;
+
+public class P009_StaticKeyword {
+	public static void main(String[] args) {
+		
+	}
+}

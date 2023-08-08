@@ -1,0 +1,14 @@
+package basic;
+
+class Student{
+	int id;
+	String name;
+	String address;
+	long contact;
+	String cname;
+}
+public class P009_StaticKeyword {
+	public static void main(String[] args) {
+		
+	}
+}
