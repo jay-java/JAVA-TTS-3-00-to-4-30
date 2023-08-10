@@ -1,0 +1,8 @@
+package basic;
+//inheritance-> to access property of one class to another class
+//5 types->1.Single 2.Multilevel 3.Multiple 4.Hierarchical 5.Hybrid
+public class P010_Inheritance {
+	public static void main(String[] args) {
+		
+	}
+}

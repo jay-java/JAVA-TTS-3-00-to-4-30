@@ -1,0 +1,58 @@
+package basic;
+
+//abstraction-> hiding internal details and showing 
+//				only essential information to user
+//			->abstract and non-abstract both functions are allowed
+//			->if function is abstract than class also should be abstract
+//			->object of abstract class is not possible/don't create
+//			->abstract class should be inherited	
+abstract class Member{
+	int id;
+	String name;
+	abstract public void setId(int id);//abstract function
+	abstract public void setName(String name);
+	public void run() {
+		System.out.println("run method");
+	}
+}
+class Teacher extends Member{
+
+	@Override
+	public void setId(int id) {
+		// TODO Auto-generated method stub
+		System.out.println("id : "+id);
+	}
+
+	@Override
+	public void setName(String name) {
+		// TODO Auto-generated method stub
+		System.out.println("name : "+name);
+	}
+	
+}
+class Student1 extends Member{
+
+	@Override
+	public void setId(int id) {
+		// TODO Auto-generated method stub
+		System.out.println("id : "+id);
+	}
+
+	@Override
+	public void setName(String name) {
+		// TODO Auto-generated method stub
+		System.out.println("name : "+name);
+	}
+	
+}
+public class P012_ABstraction {
+	public static void main(String[] args) {
+		Teacher t1 = new Teacher();
+		t1.setId(12);
+		t1.setName("java");
+		
+		Student1 s = new Student1();
+		s.setId(10);
+		s.setName("python");
+	}
+}

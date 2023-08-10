@@ -1,0 +1,7 @@
+package basic;
+//inheritance-> to access property of one class yo another class
+public class P010_Inheritance {
+	public static void main(String[] args) {
+		
+	}
+}
