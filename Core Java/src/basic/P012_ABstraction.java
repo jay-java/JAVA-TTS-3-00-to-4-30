@@ -10,8 +10,8 @@ abstract class Member{
 	int id;
 	String name;
 	abstract public void setId(int id);//abstract function
-	abstract public void setName(String name);
-	public void run() {
+	abstract public void setName(String name);//method declaration
+	public static void run() {
 		System.out.println("run methods");
 	}
 }
@@ -51,9 +51,9 @@ public class P012_ABstraction {
 		t1.setId(12);
 		t1.setName("java");
 		t1.run();
+		Teacher.run();
 		Student1 s = new Student1();
 		s.setId(10);
 		s.setName("python");
-		s.run();
 	}
 }

@@ -1,9 +1,0 @@
-package basic;
-//Primitive -> byte,short,int,long,float,double,boolean,char
-//Non-primitive-> Array,String,class
-public class P001_DataType {
-	public static void main(String[] args) {
-		byte b = 127;
-		short s = ;
-	}
-}

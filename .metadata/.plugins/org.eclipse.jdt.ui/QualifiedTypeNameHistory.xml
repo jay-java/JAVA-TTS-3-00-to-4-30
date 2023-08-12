@@ -6,4 +6,12 @@
     <fullyQualifiedTypeName name="basic.Data"/>
     <fullyQualifiedTypeName name="basic.NewData"/>
     <fullyQualifiedTypeName name="basic.Student"/>
+    <fullyQualifiedTypeName name="basic.C"/>
+    <fullyQualifiedTypeName name="basic.GC"/>
+    <fullyQualifiedTypeName name="basic.Overload"/>
+    <fullyQualifiedTypeName name="basic.Child"/>
+    <fullyQualifiedTypeName name="basic.Teacher"/>
+    <fullyQualifiedTypeName name="basic.P012_ABstraction"/>
+    <fullyQualifiedTypeName name="basic.Student1"/>
+    <fullyQualifiedTypeName name="basic.User"/>
 </qualifiedTypeNameHistroy>
