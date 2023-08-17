@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="basic.Data"/>
     <fullyQualifiedTypeName name="basic.NewData"/>
     <fullyQualifiedTypeName name="basic.Student"/>
@@ -10,8 +9,15 @@
     <fullyQualifiedTypeName name="basic.GC"/>
     <fullyQualifiedTypeName name="basic.Overload"/>
     <fullyQualifiedTypeName name="basic.Child"/>
-    <fullyQualifiedTypeName name="basic.Teacher"/>
     <fullyQualifiedTypeName name="basic.P012_ABstraction"/>
     <fullyQualifiedTypeName name="basic.Student1"/>
     <fullyQualifiedTypeName name="basic.User"/>
+    <fullyQualifiedTypeName name="basic.Teacher"/>
+    <fullyQualifiedTypeName name="basic.InterfaceCall"/>
+    <fullyQualifiedTypeName name="basic.AA"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="basic.Divide"/>
+    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
 </qualifiedTypeNameHistroy>
