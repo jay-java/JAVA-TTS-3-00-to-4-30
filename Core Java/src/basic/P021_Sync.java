@@ -1,8 +1,8 @@
 package basic;
 
-class CallBack{
+class CallBack {
 	public void call(String msg) {
-		System.out.print("["+msg);
+		System.out.print("[" + msg);
 		try {
 			Thread.sleep(2000);
 		} catch (Exception e) {
@@ -11,22 +11,26 @@ class CallBack{
 		System.out.print("]");
 	}
 }
-class Caller{
-	Thread t;
+
+class Caller implements Runnable {
 	String msg;
 	CallBack c;
-	public Caller(String msg,CallBack c) {
+	Thread t;
+
+	public Caller(String msg, CallBack c) {
 		this.msg = msg;
 		this.c = c;
-		t = new Thread();
+		t = new Thread(this);
 		t.start();
 	}
+
 	public void run() {
 		synchronized (msg) {
 			c.call(msg);
 		}
 	}
 }
+
 public class P021_Sync {
 	public static void main(String[] args) {
 		CallBack c = new CallBack();
