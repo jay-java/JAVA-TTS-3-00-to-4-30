@@ -1,7 +1,0 @@
-package basic;
-//same function name but having different functionality
-public class P011_Polymorphism {
-	public static void main(String[] args) {
-		
-	}
-}
