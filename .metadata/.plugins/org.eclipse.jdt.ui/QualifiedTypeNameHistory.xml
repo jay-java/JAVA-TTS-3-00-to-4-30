@@ -28,4 +28,10 @@
     <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="java.io.FileInputStream"/>
     <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
+    <fullyQualifiedTypeName name="javax.xml.stream.events.EntityReference"/>
+    <fullyQualifiedTypeName name="basic.ChildThread"/>
+    <fullyQualifiedTypeName name="java.lang.Runnable"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="basic.CallBack"/>
+    <fullyQualifiedTypeName name="basic.Caller"/>
 </qualifiedTypeNameHistroy>

@@ -1,7 +1,0 @@
-package basic;
-//encapsulation->to wrapping up data into single unit
-public class P013_Encalpsulation {
-	public static void main(String[] args) {
-		
-	}
-}

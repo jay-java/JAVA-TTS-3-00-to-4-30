@@ -1,7 +1,0 @@
-package basic;
-
-public class P012_ABstraction {
-	public static void main(String[] args) {
-		
-	}
-}
