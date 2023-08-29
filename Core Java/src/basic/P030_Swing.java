@@ -2,6 +2,9 @@ package basic;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 //AWT-> abstract window toolkit
 import javax.swing.JButton;
@@ -80,6 +83,33 @@ class SwingDemo implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == b1) {
 			System.out.println("insert button clicked");
+			int id = Integer.parseInt(t1.getText());
+			String name=  t2.getText();
+			long contact = Long.parseLong(t3.getText());
+			String address = t4.getText();
+			String email = t5.getText();
+			System.out.println(id+name+contact+address+email);
+			try {
+				Connection conn = P030_Swing.createConnection();
+				String sql = "insert into data(id,name,contact,address,email) values(?,?,?,?,?)";
+				PreparedStatement pst = conn.prepareStatement(sql);
+				pst.setInt(1, id);
+				pst.setString(2, name);
+				pst.setLong(3, contact);
+				pst.setString(4, address);
+				pst.setString(5, email);
+				pst.executeUpdate();
+				System.out.println("data inserted successfulyy");
+				t1.setText("");
+				t2.setText("");
+				t3.setText("");
+				t4.setText("");
+				t5.setText("");
+//				executeUpdate()->DML(insert,update,delete)
+//				executeQuery()->DQL(select)
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		}
 		else if(e.getSource() == b2) {
 			System.out.println("search button clicked");
@@ -98,5 +128,15 @@ class SwingDemo implements ActionListener{
 public class P030_Swing {
 	public static void main(String[] args) {
 		new SwingDemo();
+	}
+	public static Connection createConnection() {
+		Connection conn = null;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn =  DriverManager.getConnection("jdbc:mysql://localhost:3306/swing", "root", "");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return conn;
 	}
 }
