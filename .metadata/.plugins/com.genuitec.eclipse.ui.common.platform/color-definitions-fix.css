@@ -1914,6 +1914,7 @@ IEclipsePreferences#org-eclipse-jst-jsp-ui {
 }
 IEclipsePreferences#org-eclipse-mylyn-wikitext-ui {
 	preferences:
+		'block-bc=font-family: monospace; color: #569cd6;'
 		'block-h1=font-size: 120%; font-weight: bold; color: #118bbd;'
 		'block-h2=font-size: 110%; font-weight: bold; color: #118bbd;'
 		'block-h3=font-size: 105%; font-weight: bold; color: #118bbd;'
@@ -2176,6 +2177,8 @@ IEclipsePreferences#org-eclipse-ui-workbench {
 		'org.eclipse.emf.codegen.ui.jet.expressionForeground=152,152,255'
 		'org.eclipse.emf.codegen.ui.jet.scriptletBackground=2,3,3'
 		'org.eclipse.emf.codegen.ui.jet.scriptletForeground=235,237,239'
+		'org.eclipse.gef.color.list.hover.background=38,34,27'
+		'org.eclipse.gef.color.list.selected.background=21,23,25'
 		'org.eclipse.jdt.ui.ColoredLabels.inherited=143,143,191'
 		'org.eclipse.jdt.ui.ColoredLabels.writeaccess_highlight=255,128,128'
 		'org.eclipse.jdt.ui.Javadoc.backgroundColor=48,54,59'
@@ -2300,10 +2303,6 @@ IEclipsePreferences#org-eclipse-ui-workbench {
 		'org.eclipse.wst.jsdt.ui.typeArgumentHighlighting=255,255,0'
 		'org.eclipse.wst.jsdt.ui.typeParameterHighlighting=247,173,123'
 		'org.eclipse.wst.jsdt.ui.typeVariableDeclarationHighlighting=247,173,123'
-		'org.springframework.ide.eclipse.boot.dash.AltTextDecorColor=173,216,230'
-		'org.springframework.ide.eclipse.boot.dash.MutedTextDecorColor=205,210,214'
-		'org.springframework.ide.eclipse.boot.dash.TextDecorColor=144,238,144'
-		'org.springframework.tooling.ls.eclipse.commons.STS4BootMarkerIndicationColor=54,81,25'
 		'piBorder=0,254,254'
 		'tagAttributeName=255,0,255'
 		'tagAttributeValue=212,0,255'
