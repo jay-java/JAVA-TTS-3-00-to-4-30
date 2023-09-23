@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.UserDao;
 import model.User;
@@ -45,12 +46,33 @@ public class UserController extends HttpServlet {
 			u.setAddress(request.getParameter("address"));
 			u.setEmail(request.getParameter("email"));
 			u.setPassword(request.getParameter("password"));
+			String email = request.getParameter("email");
 			System.out.println(u);
-			UserDao.insertUser(u);
-			response.sendRedirect("login.jsp");
+			boolean flag = UserDao.checkEmail(email);
+			System.out.println(flag);
+			if(flag == true) {
+				request.setAttribute("msg", "email already exist");
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+			}
+			else {
+				UserDao.insertUser(u);
+				response.sendRedirect("login.jsp");
+			}
 		}
 		else if(action.equalsIgnoreCase("login")) {
-			
+			String email = request.getParameter("email");
+			String pass = request.getParameter("password");
+			boolean flag = UserDao.checkEmail(email);
+			if(flag == true) {
+				User u = UserDao.userLogin(email, pass);
+				HttpSession session = request.getSession();
+				session.setAttribute("data", u);
+				request.getRequestDispatcher("home.jsp").forward(request, response);
+			}
+			else {
+				request.setAttribute("msg", "account is not registered");
+				request.getRequestDispatcher("login.jsp").forward(request, response);
+			}
 		}
 		
 		

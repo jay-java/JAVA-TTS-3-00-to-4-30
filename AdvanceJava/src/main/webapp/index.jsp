@@ -14,6 +14,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%-- <%scriplets %> --%>
+
+<%String msg  = (String)request.getAttribute("msg"); %>
+<%if(msg!=null){ %>
+	<%out.print(msg); %>
+<%} %>
 	<form action="MyController" method="post">
 		<table>
 			<tr>
