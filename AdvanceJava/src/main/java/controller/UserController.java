@@ -17,30 +17,34 @@ import model.User;
 @WebServlet("/MyController")
 public class UserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UserController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public UserController() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String action = request.getParameter("action");
-		if(action.equalsIgnoreCase("register")) {
-			User u =new User();
+		if (action.equalsIgnoreCase("register")) {
+			User u = new User();
 			u.setName(request.getParameter("name"));
 			u.setContact(Long.parseLong(request.getParameter("contact")));
 			u.setAddress(request.getParameter("address"));
@@ -50,32 +54,40 @@ public class UserController extends HttpServlet {
 			System.out.println(u);
 			boolean flag = UserDao.checkEmail(email);
 			System.out.println(flag);
-			if(flag == true) {
+			if (flag == true) {
 				request.setAttribute("msg", "email already exist");
 				request.getRequestDispatcher("index.jsp").forward(request, response);
-			}
-			else {
+			} else {
 				UserDao.insertUser(u);
 				response.sendRedirect("login.jsp");
 			}
-		}
-		else if(action.equalsIgnoreCase("login")) {
+		} else if (action.equalsIgnoreCase("login")) {
 			String email = request.getParameter("email");
 			String pass = request.getParameter("password");
 			boolean flag = UserDao.checkEmail(email);
-			if(flag == true) {
+			if (flag == true) {
 				User u = UserDao.userLogin(email, pass);
-				HttpSession session = request.getSession();
-				session.setAttribute("data", u);
-				request.getRequestDispatcher("home.jsp").forward(request, response);
-			}
-			else {
+				if (u != null) {
+					HttpSession session = request.getSession();
+					session.setAttribute("data", u);
+					request.getRequestDispatcher("home.jsp").forward(request, response);
+				}
+				else {
+					request.setAttribute("msg", "password is incorrect");
+					request.getRequestDispatcher("login.jsp").forward(request, response);
+				}
+			} else {
 				request.setAttribute("msg", "account is not registered");
 				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
 		}
-		
-		
+		else if(action.equalsIgnoreCase("edit")) {
+			int id = Integer.parseInt(request.getParameter("id"));
+			User u = UserDao.getUserById(id);
+			request.setAttribute("data", u);
+			request.getRequestDispatcher("update.jsp").forward(request, response);
+		}
+
 	}
 
 }
