@@ -24,6 +24,7 @@ public class P022_ListDemo {
 		System.out.println(list);
 		System.out.println(list.size());
 		list.remove(7);
+		list.add("name");
 		System.out.println(list);
 		Iterator itr = list.iterator();
 		while(itr.hasNext()) {

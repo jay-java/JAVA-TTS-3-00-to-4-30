@@ -17,6 +17,16 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+	<%
+	response.setHeader("Cache-Control", "no-cache");
+	response.setHeader("Cache-Control", "no-store");
+	response.setHeader("Pragma", "no-cache");
+	response.setDateHeader("Expires", 0);
+
+	if (session.getAttribute("data") == null)
+		response.sendRedirect("login.jsp");
+	%>
 	<%
 	User u = null;
 	if (session.getAttribute("data") != null) {
@@ -60,11 +70,11 @@
 					<td><%=u1.getPassword()%></td>
 					<td>
 						<form action="MyController" method="post">
-							<input type="hidden" name="id" value="<%=u1.getId()%>"> 
-							<input type="submit" name="action" value="edit">
+							<input type="hidden" name="id" value="<%=u1.getId()%>"> <input
+								type="submit" name="action" value="edit">
 						</form>
 					</td>
-					<td><a href="#">Delete</a></td>
+					<td><a href="delete.jsp?id=<%=u1.getId()%>">Delete</a></td>
 				</tr>
 				<%
 				}
@@ -72,6 +82,9 @@
 			</tbody>
 		</table>
 	</div>
+	<h1 class="text-center">
+		<a href="logout.jsp">Logout</a>
+	</h1>
 
 </body>
 </html>

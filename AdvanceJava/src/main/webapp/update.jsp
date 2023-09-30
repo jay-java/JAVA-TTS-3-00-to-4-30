@@ -12,7 +12,7 @@
 	<form action="MyController" method="post">
 		<table>
 			<tr>
-				<td><input type="hidden" name="name" value="<%=u.getId()%>"></td>
+				<td><input type="hidden" name="id" value="<%=u.getId()%>"></td>
 			</tr>
 			<tr>
 				<td>Name :</td>

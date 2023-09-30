@@ -109,4 +109,33 @@ public class UserDao {
 		}
 		return u;
 	}
+	public static void updateUser(User u) {
+		try {
+			Connection con = DBConnection.createConnection();
+			String sql = "update user set name=?,contact=?,address=?,email=?,password=? where id=?";
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, u.getName());
+			pst.setLong(2, u.getContact());
+			pst.setString(3, u.getAddress());
+			pst.setString(4, u.getEmail());
+			pst.setString(5, u.getPassword());
+			pst.setInt(6, u.getId());
+			pst.executeUpdate();
+			System.out.println("data updated");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void deleteUser(int id) {
+		try {
+			Connection con = DBConnection.createConnection();
+			String sql = "delete from user where id=?";
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setInt(1, id);
+			pst.executeUpdate();
+			System.out.println("data deleted");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
