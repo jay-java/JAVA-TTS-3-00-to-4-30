@@ -66,4 +66,20 @@ public class SellerDao {
 		}
 		return u;
 	}
+	public static void updateSellerProfile(Seller s) {
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "update seller set name=?,contact=?,address=?,email=? where id=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setString(1, s.getName());
+			pst.setLong(2, s.getContact());
+			pst.setString(3, s.getAddress());
+			pst.setString(4, s.getEmail());
+			pst.setInt(5, s.getId());
+			pst.executeUpdate();
+			System.out.println("data updated");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
