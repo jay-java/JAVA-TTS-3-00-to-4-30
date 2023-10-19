@@ -82,4 +82,34 @@ public class SellerDao {
 			e.printStackTrace();
 		}
 	}
+	public static boolean checkOldPassword(int id,String pass) {
+		boolean flag = false;
+		try {
+			Connection con = DBConnection.createConnection();
+			String sql = "select * from seller where id=? and password=?";
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setInt(1, id);
+			pst.setString(2, pass);
+			ResultSet rs = pst.executeQuery();
+			if (rs.next()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
+	public static void updatePassword(int id,String np) {
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "update seller set password=? where id=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setString(1, np);
+			pst.setInt(2, id);
+			pst.executeUpdate();
+			System.out.println("pass updated");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

@@ -58,23 +58,12 @@
 								data-validation-required-message="Please enter your email" />
 							<p class="help-block text-danger"></p>
 						</div>
-						<div class="control-group">
-							<input type="password" class="form-control" name="password"
-								id="email" placeholder="Your Email" required="required"
-								data-validation-required-message="Please enter your email" />
-							<p class="help-block text-danger"></p>
-						</div>
-
 						<div>
 							<button class="btn btn-primary py-2 px-4" type="submit"
-								name="action" value="login" id="sendMessageButton">Login</button>
+								name="action" value="getotp" id="sendMessageButton">Get OTP</button>
 						</div>
 					</form>
-					<br>
-					<br>
-					<div>
-						<a class="btn btn-primary py-2 px-4" href="seller-forgot-password.jsp">Forgot Password?</a>
-					</div>
+					
 				</div>
 			</div>
 		</div>
