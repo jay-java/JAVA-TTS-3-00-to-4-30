@@ -30,7 +30,7 @@
             <div class="col-lg-7 mb-5">
                 <div class="contact-form bg-light p-30">
                     <div id="success"></div>
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                    <form action="CustomerController" method="post">
                         <div class="control-group">
                             <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
                                 required="required" data-validation-required-message="Please enter your email" />

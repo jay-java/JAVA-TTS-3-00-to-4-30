@@ -30,7 +30,7 @@
             <div class="col-lg-7 mb-5">
                 <div class="contact-form bg-light p-30">
                     <div id="success"></div>
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                    <form action="CustomerController" method="post">
                         <div class="control-group">
                             <input type="text" class="form-control" name="name" id="name" placeholder="Your Name"
                                 required="required" data-validation-required-message="Please enter your name" />
@@ -53,7 +53,7 @@
                             <p class="help-block text-danger"></p>
                         </div>
                           <div class="control-group">
-                            <input type="email" class="form-control" name="password" id="email" placeholder="Your Email"
+                            <input type="password" class="form-control" name="password" id="email" placeholder="Your Email"
                                 required="required" data-validation-required-message="Please enter your email" />
                             <p class="help-block text-danger"></p>
                         </div>
