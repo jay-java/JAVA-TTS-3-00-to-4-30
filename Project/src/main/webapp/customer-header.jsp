@@ -1,3 +1,6 @@
+<%@page import="dao.WishListDao"%>
+<%@page import="model.WishList"%>
+<%@page import="java.util.List"%>
 <%@page import="model.Customer"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -138,7 +141,7 @@
 					<div class="collapse navbar-collapse justify-content-between"
 						id="navbarCollapse">
 						<div class="navbar-nav mr-auto py-0">
-							<a href="seller-home.jsp" class="nav-item nav-link active">Home</a>
+							<a href="customer-home.jsp" class="nav-item nav-link active">Home</a>
 							<!-- <div class="nav-item dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Product <i
 									class="fa fa-angle-down mt-1"></i></a>
@@ -161,11 +164,12 @@
 							</div>
 						</div>
 						<div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-							<a href="" class="btn px-0"> <i
+						<%List<WishList> w_list = WishListDao.getAllWishList(); %>
+							<a href="customer-wishlist.jsp" class="btn px-0"> <i
 								class="fas fa-heart text-primary"></i> <span
 								class="badge text-secondary border border-secondary rounded-circle"
-								style="padding-bottom: 2px;">0</span>
-							</a> <a href="" class="btn px-0 ml-3"> <i
+								style="padding-bottom: 2px;"><%out.print(w_list.size()); %></span>
+							</a> <a href="customer-cart.jsp" class="btn px-0 ml-3"> <i
 								class="fas fa-shopping-cart text-primary"></i> <span
 								class="badge text-secondary border border-secondary rounded-circle"
 								style="padding-bottom: 2px;">0</span>

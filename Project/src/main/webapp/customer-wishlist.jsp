@@ -1,3 +1,5 @@
+<%@page import="model.WishList"%>
+<%@page import="dao.WishListDao"%>
 <%@page import="dao.ProductDao"%>
 <%@page import="model.Product"%>
 <%@page import="java.util.List"%>
@@ -12,80 +14,84 @@
 </head>
 <body>
 
-
-	<%
-	int id = Integer.parseInt(request.getParameter("id"));
-	%>
-	<%
-	Product p = ProductDao.getSingleProductByPid(id);
-	%>
-	<!-- Breadcrumb Start -->
-	<div class="container-fluid">
+	<!-- Products Start -->
+	<div class="container-fluid pt-5 pb-3">
+		<h2
+			class="section-title position-relative text-uppercase mx-xl-5 mb-4">
+			<span class="bg-secondary pr-3">Products</span>
+		</h2>
 		<div class="row px-xl-5">
-			<div class="col-12">
-				<nav class="breadcrumb bg-light mb-30">
-					<a class="breadcrumb-item text-dark" href="#">Home</a> <a
-						class="breadcrumb-item text-dark" href="#">Shop</a> <span
-						class="breadcrumb-item active">Shop Detail</span>
-				</nav>
-			</div>
-		</div>
-	</div>
-	<!-- Breadcrumb End -->
-
-
-	<!-- Shop Detail Start -->
-	<div class="container-fluid pb-5">
-		<div class="row px-xl-5">
-			<div class="col-lg-5 mb-30">
-				<div id="product-carousel" class="carousel slide"
-					data-ride="carousel">
-					<div class="carousel-inner bg-light">
-						<div class="carousel-item active">
-							<img class="w-100 h-100" src="image/<%=p.getImage()%>"
-								alt="Image">
+			<%
+			List<WishList> list = WishListDao.getWishListByCusid(u.getId());
+			%>
+			<%
+			for (WishList p : list) {
+			%>
+			<div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+				<div class="product-item bg-light mb-4">
+					<div>
+						<img src="image/<%=p.getPimage()%>" alt="" height="200"
+							width="250">
+						 
+					</div>
+					<div class="text-center py-4">
+						<a class="h6 text-decoration-none text-truncate"
+							href="customer-single-product.jsp?id=<%=p.getPid()%>"></a><%=p.getPname()%>
+						<div class="d-flex align-items-center justify-content-center mt-2">
+							<h5>
+								Rs.
+								<%=p.getPprice()%></h5>
 						</div>
 					</div>
+					
 				</div>
+				<div class="btn btn-danger"><a href="remove-wishlist.jsp?id=<%=p.getWid() %>">Remove From WishList</a></div>
 			</div>
+			<%
+			}
+			%>
 
-			<div class="col-lg-7 h-auto mb-30">
-				<div class="h-100 bg-light p-30">
-					<h3><%=p.getPname()%></h3>
-					<h3 class="font-weight-semi-bold mb-4"><%=p.getPprice()%></h3>
-					<h3 class="font-weight-semi-bold mb-4"><%=p.getPcategory()%></h3>
-					<h3 class="font-weight-semi-bold mb-4"><%=p.getPdesc()%></h3>
+		</div>
+	</div>
+	<!-- Products End -->
 
-					<div class="d-flex align-items-center mb-4 pt-2">
 
-						<button class="btn btn-primary px-3">
-							<i class="fa fa-shopping-cart mr-1"></i> Add To Cart
-						</button>
+
+
+	<!-- Vendor Start -->
+	<div class="container-fluid py-5">
+		<div class="row px-xl-5">
+			<div class="col">
+				<div class="owl-carousel vendor-carousel">
+					<div class="bg-light p-4">
+						<img src="img/vendor-1.jpg" alt="">
 					</div>
-					<div class="d-flex align-items-center mb-4 pt-2">
-						<form action="WishListController" method="post">
-							<input type="hidden" name="cusid" value="<%=u.getId()%>">
-							<input type="hidden" name="pid" value="<%=p.getPid()%>">
-							<input type="hidden" name="pprice" value="<%=p.getPprice()%>">
-							<input type="hidden" name="pname" value="<%=p.getPname()%>">
-							<input type="hidden" name="pimage" value="<%=p.getImage()%>">
-							<input type="hidden" name="pdesc" value="<%=p.getPdesc()%>">
-							<button type="submit" name="action" value="addtowishlist"
-								class="btn btn-primary px-3">
-								<i class="fa fa-shopping-cart mr-1"></i> Add To Wishlist
-							</button>
-						</form>
+					<div class="bg-light p-4">
+						<img src="img/vendor-2.jpg" alt="">
+					</div>
+					<div class="bg-light p-4">
+						<img src="img/vendor-3.jpg" alt="">
+					</div>
+					<div class="bg-light p-4">
+						<img src="img/vendor-4.jpg" alt="">
+					</div>
+					<div class="bg-light p-4">
+						<img src="img/vendor-5.jpg" alt="">
+					</div>
+					<div class="bg-light p-4">
+						<img src="img/vendor-6.jpg" alt="">
+					</div>
+					<div class="bg-light p-4">
+						<img src="img/vendor-7.jpg" alt="">
+					</div>
+					<div class="bg-light p-4">
+						<img src="img/vendor-8.jpg" alt="">
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
-	<!-- Shop Detail End -->
-
-
-
-
+	<!-- Vendor End -->
 
 
 	<!-- Footer Start -->
